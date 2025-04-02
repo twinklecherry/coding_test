@@ -1,27 +1,29 @@
-import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int M = Integer.parseInt(br.readLine());
-
+        int m = Integer.parseInt(br.readLine());
         int ball = 1;
+        StringTokenizer st;
 
-        for(int i=0; i<M; i++){
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int X = Integer.parseInt(st.nextToken());
-            int Y = Integer.parseInt(st.nextToken());
+        for(int i=0; i<m; i++){
+            st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
             
-            if(ball == X){
-                ball = Y;
-            } else if(ball == Y){
-                ball = X;
+            if(ball==x){
+                ball=y;
+            }else if(ball==y){
+                ball=x;
             }
 
         }
-        System.out.print(ball);
+
+        System.out.println(ball);
+
     }
 }
